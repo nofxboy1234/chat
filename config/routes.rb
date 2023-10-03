@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'messages/new'
-  get 'messages/create'
+  # get 'messages/new'
+  # get 'messages/create'
   resources :rooms do
     resources :messages
   end
