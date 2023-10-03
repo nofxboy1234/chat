@@ -1,6 +1,13 @@
 <h1>Messages#new</h1>
 <p>Find me in app/views/messages/new.html.erb</p>
 
+<% if false %>
+  If your resource has associations defined, for example, you want to add comments to the document given that the routes are set correctly:
+  <%= form_with(model: [ @document, Comment.new ]) do |form| %>
+  ...
+  <% end %>
+<% end %>
+
 <%= form_with(model: [@message.room, @message]) do |form| %>
   <div class='field'>
     <%= form.text_field :content %>

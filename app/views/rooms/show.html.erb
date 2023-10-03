@@ -1,14 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @room %>
+<%= turbo_frame_tag 'room' do %>
+  <%= render @room %>
 
-<div>
-  <%= link_to "Edit this room", edit_room_path(@room) %> |
-  <%= link_to "Back to rooms", rooms_path %>
-
-  <div id='messages'>
-    <%= render @room.messages %>
+  <div>
+    <%= link_to "Edit this room", edit_room_path(@room) %> |
+    <%= link_to "Back to rooms", rooms_path, data: { turbo_frame: '_top' } %>
   </div>
+<% end %>
 
-  <%= link_to 'New message', new_room_message_path(@room) %>
+<div id='messages'>
+  <%= render @room.messages %>
 </div>
+
+<%= link_to 'New message', new_room_message_path(@room) %>
