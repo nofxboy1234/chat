@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<%= turbo_stream_from @room, :messages2, target: 'messages2' %>
+<%= turbo_stream_from @room %>
 
 <%= turbo_frame_tag 'room' do %>
   <%= render @room %>
@@ -11,7 +11,7 @@
   </div>
 <% end %>
 
-<div id='messages2'>
+<div id='messages'>
   <%= render @room.messages %>
 </div>
 
